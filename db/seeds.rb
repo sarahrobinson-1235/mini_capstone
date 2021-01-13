@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+product = Product.new(name: "Strawberry", price: 8, description:"strawberry scented 3 wick candle")
+product.save
+
+product = Product.new(name: "Isalnd Dream", price: 12, description:"floral/fresh scented candle")
+product.save
+
+product = Product.new(name: "Beeswax", price: 20, description:"Organic non-scented candle")
+product.save
