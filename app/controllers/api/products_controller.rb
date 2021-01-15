@@ -13,4 +13,9 @@ class Api::ProductsController < ApplicationController
     @last_product = Product.last 
     render "last_product.json.jb"
   end
+
+  def any_product
+    
+    render "any_product.json.jb"
+  end
 end
