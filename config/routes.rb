@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     get "/last_product" => "products#last_product"
 
     get "/any_product" => "products#any_product"
+
+    get "/any_product/:id" => "products#any_product"
   end
 end
