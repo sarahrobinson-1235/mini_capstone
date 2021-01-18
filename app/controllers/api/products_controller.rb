@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
-  def all_products
-    @all_products = Product.all
-    render "all_products.json.jb"
+  def index
+    @products = Product.all
+    render "index.json.jb"
   end
 
   def first_product 
@@ -14,9 +14,17 @@ class Api::ProductsController < ApplicationController
     render "last_product.json.jb"
   end
 
-  def any_product
+  def show
     id = params["id"]
     @product = Product.find_by(id: id)
-    render "any_product.json.jb"
+    render "show.json.jb"
+  end
+
+  def create
+    @product = Product.new(
+      id: params[:id], name: params[:name], price: params[:price], description: params[:description]
+    )
+    @product.save
+    render "show.json.jb"
   end
 end
