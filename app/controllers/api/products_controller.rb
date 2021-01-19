@@ -4,14 +4,6 @@ class Api::ProductsController < ApplicationController
     render "index.json.jb"
   end
 
-  def first_product 
-    @first_product = Product.first 
-    render "first_product.json.jb"
-  end
-
-  def last_product
-    @last_product = Product.last 
-    render "last_product.json.jb"
   end
 
   def show
