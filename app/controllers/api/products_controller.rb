@@ -4,8 +4,6 @@ class Api::ProductsController < ApplicationController
     render "index.json.jb"
   end
 
-  end
-
   def show
     id = params["id"]
     @product = Product.find_by(id: id)
