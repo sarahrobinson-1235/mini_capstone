@@ -14,8 +14,11 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       id: params[:id], name: params[:name], price: params[:price], description: params[:description], inventory: params[:inventory]
     )
-    @product.save
+    if @product.save
     render "show.json.jb"
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -27,8 +30,11 @@ class Api::ProductsController < ApplicationController
     @product.description = params[:description] || @product.description
     @product.image_url = params[:image_url] || @product.image_url
     @product.inventory = params[:inventory]
-    @product.save
-    render "show.json.jb"
+    if @product.save
+      render "show.json.jb"
+    else
+      render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
