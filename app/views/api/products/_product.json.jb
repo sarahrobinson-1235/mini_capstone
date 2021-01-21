@@ -4,7 +4,7 @@
   price: product.price,
   image_url: product.image_url,
   description: product.description,
-  inventory: product.inventory
+  inventory: product.inventory,
   formatted: {
     discounted: product.is_discounted?,
     tax: number_to_currency(product.tax),
