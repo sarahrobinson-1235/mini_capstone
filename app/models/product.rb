@@ -19,4 +19,6 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
+
+  #scope :discounted, => {where("price < ?", 10)}
 end
