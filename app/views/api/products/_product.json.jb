@@ -2,7 +2,6 @@
   id: product.id,
   name: product.name,
   price: product.price,
-  image_url: product.image_url,
   description: product.description,
   inventory: product.inventory,
   formatted: {
@@ -14,6 +13,6 @@
     name: product.supplier.name,
     email: product.supplier.email,
     phone_number: product.supplier.phone_number
-  }
-
+  },
+  images: product.images
 }

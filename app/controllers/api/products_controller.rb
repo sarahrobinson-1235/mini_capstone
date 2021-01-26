@@ -38,7 +38,6 @@ class Api::ProductsController < ApplicationController
     @product.name = params[:name] || @product.name 
     @product.price = params[:price] || @product.price
     @product.description = params[:description] || @product.description
-    @product.image_url = params[:image_url] || @product.image_url
     @product.inventory = params[:inventory]
     if @product.save
       render "show.json.jb"
