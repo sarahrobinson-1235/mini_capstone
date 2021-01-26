@@ -14,5 +14,5 @@
     email: product.supplier.email,
     phone_number: product.supplier.phone_number
   },
-  images: product.images
+  images: product.images,
 }
