@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
 
+  belongs_to :supplier
+  has_many :images
+
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :price, numericality: {greater_than: 0}
@@ -20,5 +23,5 @@ class Product < ApplicationRecord
     price + tax
   end
 
-  #scope :discounted, => {where("price < ?", 10)}
+  #scope :discounted, -> {where("price < ?", 10)}
 end

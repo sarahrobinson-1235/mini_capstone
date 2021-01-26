@@ -9,5 +9,11 @@
     discounted: product.is_discounted?,
     tax: number_to_currency(product.tax),
     total: number_to_currency(product.total)
+  },
+  supplier_info: {
+    name: product.supplier.name,
+    email: product.supplier.email,
+    phone_number: product.supplier.phone_number
   }
+
 }
